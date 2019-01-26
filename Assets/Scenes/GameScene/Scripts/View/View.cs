@@ -1,4 +1,5 @@
 ﻿using System;
+using Scenes.GameScene.Scripts.Animator;
 using Scenes.GameScene.Scripts.Model;
 using UnityEngine;
 
@@ -10,6 +11,8 @@ namespace Scenes.GameScene.Scripts.View
         [SerializeField]
         private DemoUi demoUi;
         [SerializeField]
+        private HealthAnimator smileStatus;
+        [SerializeField]
         private GameObject shield;
 
         public Action TakeDamage
@@ -19,7 +22,7 @@ namespace Scenes.GameScene.Scripts.View
 
         public void SetPlantState(PlanetState state)
         {
-            demoUi.SetHealth(state.Health);
+            smileStatus.SetHealth(state.Health);
         }
     }
 }

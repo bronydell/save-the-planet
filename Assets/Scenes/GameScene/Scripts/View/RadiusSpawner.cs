@@ -7,13 +7,13 @@ namespace Scenes.GameScene.Scripts.View
         [SerializeField]
         protected float Radius = 5;
 
-        public void Spawn(GameObject prefab)
+        public GameObject Spawn(GameObject prefab)
         {
             var pos = RandomPointAtRadius() * Radius;
-            Instantiate(prefab, pos, Quaternion.identity);
+            return Instantiate(prefab, pos, Quaternion.identity);
         }
 
-        private Vector2 RandomPointAtRadius()
+        protected Vector2 RandomPointAtRadius()
         {
             return Random.insideUnitCircle.normalized;
         }

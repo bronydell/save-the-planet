@@ -8,8 +8,13 @@ namespace Scenes.GameScene.Scripts.View
         {
             if (collision.gameObject.CompareTag("SunRay"))
             {
+                Destroy(collision.gameObject);
+            }
+            if (collision.gameObject.CompareTag("Gas"))
+            {
                 OnDestroy();
                 Destroy(collision.gameObject);
+                Destroy(gameObject);
             }
         }
 

@@ -5,10 +5,12 @@ namespace Scenes.GameScene.Scripts.View
     public class ProjectileMovement : MonoBehaviour
     {
         [SerializeField]
-        private Rigidbody2D Rb;
+        protected Rigidbody2D Rb;
 
         [SerializeField]
-        private float speed;
+        protected float speed;
+
+        public Vector3 target = Vector3.zero;
 
         public void FaceTowards(Vector3 target)
         {
@@ -17,7 +19,7 @@ namespace Scenes.GameScene.Scripts.View
 
         private void Start()
         {
-            FaceTowards(Vector3.zero);
+            FaceTowards(target);
         }
 
         private void FixedUpdate()

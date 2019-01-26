@@ -1,24 +1,39 @@
-﻿using Assets.Scenes.GameScene.Scripts.View;
+﻿using Assets.Scenes.GameScene.Scripts.Model;
+using Assets.Scenes.GameScene.Scripts.View;
 
 namespace Assets.Scenes.GameScene.Scripts.Controller
 {
     public class GameController
     {
         private IGameView view;
+        private PlanetState state;
 
-        public GameController(IGameView view)
+        public GameController(IGameView view, PlanetState state)
         {
             this.view = view;
+            this.state = state;
+        }
+
+        public void StartTheGame()
+        {
+            InitView();
+        }
+
+        private void InitView()
+        {
+            view.TakeDamage = TakeDamage;
+            UpdateView();
         }
 
         private void UpdateView()
         {
-
+            view.SetPlantState(state);
         }        
 
         private void TakeDamage()
         {
-            // TODO: Some logic goes here...
+            state = state.SetHealth(state.Health - 1);
+            UpdateView();
         }
     }
 }

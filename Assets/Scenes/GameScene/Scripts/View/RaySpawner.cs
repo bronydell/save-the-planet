@@ -1,32 +1,29 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Runtime.InteropServices.WindowsRuntime;
+using UnityEngine.Networking;
 
-public class RaySpawner : MonoBehaviour
+public class RaySpawner : RadiusSpawner
 {
     [SerializeField]
-    private float Cooldown = 1;
+    private float cooldown = 1;
     [SerializeField]
-    private float SpawnRadius;
-    [SerializeField]
-    private RadiusSpawner Spawner;
-    [SerializeField]
-    private GameObject Ray;
-
-    private float timer;
+    private GameObject ray;
     
-    void Start()
+    private void Start()
     {
-        timer = 0;
+        SpawnProjectile();
     }
-    
-    void Update()
+
+    private void SpawnProjectile()
     {
-        timer += Time.deltaTime;
-        if (timer >= Cooldown)
-        {
-            timer = 0;
-            Spawner.Radius = SpawnRadius;
-            Spawner.Spawn(Ray);
-        }
+        StartCoroutine(SpawnProjectile(ray));
+    }
+
+    private IEnumerator SpawnProjectile(GameObject ray)
+    {
+        Spawn(ray);
+        yield return new WaitForSeconds(cooldown);
+        SpawnProjectile();
     }
 }

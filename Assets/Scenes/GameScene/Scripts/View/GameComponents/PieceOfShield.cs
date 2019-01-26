@@ -1,9 +1,12 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Scenes.GameScene.Scripts.View.GameComponents
 {
     public class PieceOfShield : MonoBehaviour
     {
+        public Action OnDestroyRay { set; private get; }
+
         public PieceOfShield prev;
         public PieceOfShield next;
 
@@ -16,8 +19,12 @@ namespace Scenes.GameScene.Scripts.View.GameComponents
 
             if (collision.gameObject.CompareTag("SunRay"))
             {
-               if (movement != null)
-                   movement.DestroyMe(true);
+                if (movement != null)
+                {
+                    OnDestroyRay?.Invoke();
+                    movement.IncreaseScore();
+                    movement.DestroyMe(true);
+                }
             }
             if (collision.gameObject.CompareTag("Gas"))
             {

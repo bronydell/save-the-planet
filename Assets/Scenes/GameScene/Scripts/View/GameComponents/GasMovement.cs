@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using DG.Tweening;
 using UnityEngine;
 
@@ -8,7 +9,7 @@ namespace Scenes.GameScene.Scripts.View.GameComponents
     {
         private SpriteRenderer spriteRenderer;
 
-        [SerializeField] private float transparancyAnimationTime = 1f;
+        [SerializeField] private float transparencyAnimationTime = 1f;
 
         private void Start()
         {
@@ -29,13 +30,14 @@ namespace Scenes.GameScene.Scripts.View.GameComponents
             }
 
             var sequence = DOTween.Sequence();
-            sequence.Append(spriteRenderer.DOFade(0, transparancyAnimationTime));
+            sequence.Append(spriteRenderer.DOFade(0, transparencyAnimationTime));
             sequence.AppendCallback(() => base.DestroyMe(false));
         }
 
         private IEnumerator DestroyMeAfterTime(float time)
         {
             yield return new WaitForSeconds(time);
+            IncreaseScore();
             DestroyMe(false);
         }
     }

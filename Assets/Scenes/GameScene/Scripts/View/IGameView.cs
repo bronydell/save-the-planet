@@ -6,7 +6,10 @@ namespace Scenes.GameScene.Scripts.View
     public interface IGameView
     {
         Action TakeDamage { set; }
+        Action DestroyedRay { set; }
+        Action DestroyedGas { set; }
 
         void SetPlantState(PlanetState state);
+        void InitShield();
     }
 }

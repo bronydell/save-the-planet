@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Scenes.GameScene.Scripts.View.GameComponents
 {
@@ -11,13 +12,12 @@ namespace Scenes.GameScene.Scripts.View.GameComponents
 
         public float Radius = 5;
 
-        private void Start()
+        private void Awake()
         {
             pieceOfShieldRenderer = pieceOfShield.GetComponent<SpriteRenderer>();
-            GenerateShield();
         }
    
-        private void GenerateShield()
+        public void GenerateShield()
         {
             /*var height = pieceOfShieldRenderer.sprite.rect.height * pieceOfShield.transform.localScale.y;
             var width = pieceOfShieldRenderer.sprite.rect.width * pieceOfShield.transform.localScale.x;

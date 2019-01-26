@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using Scenes.GameScene.Scripts.View.GameComponents;
 using UnityEngine;
 
@@ -6,6 +7,9 @@ namespace Scenes.GameScene.Scripts.View.Spawner
 {
     public class GasSpawner : RadiusSpawner
     {
+        [HideInInspector]
+        public Action onGasSelfDestroy;
+
         [SerializeField]
         private float cooldown = 1;
         [SerializeField]
@@ -17,7 +21,6 @@ namespace Scenes.GameScene.Scripts.View.Spawner
 
         private void Start()
         {
-            
             Radius = earth.bounds.size.x / 2;
             SpawnProjectile();
         }
@@ -32,6 +35,7 @@ namespace Scenes.GameScene.Scripts.View.Spawner
             yield return new WaitForSeconds(cooldown);
             var gasObj = Spawn(gas);
             var movement = gasObj.GetComponent<ProjectileMovement>();
+            movement.OnSuccessDestroy = onGasSelfDestroy;
             movement.FaceTowards(gasObj.transform.position * 2);
             movement.StartSelfDestroying(shield.Radius);
             SpawnProjectile();

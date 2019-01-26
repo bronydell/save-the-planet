@@ -12,7 +12,6 @@ namespace Scenes.GameScene.Scripts
 
         public void Start()
         {
-            var view = FindObjectOfType<View.View>();
             var controller = new GameController(earth, new PlanetState(5));
             controller.StartTheGame();
         }

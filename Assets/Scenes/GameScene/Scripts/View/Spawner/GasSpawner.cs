@@ -1,9 +1,8 @@
-﻿using UnityEngine;
-using System.Collections;
-using System.Runtime.InteropServices.WindowsRuntime;
-using UnityEngine.Networking;
+﻿using System.Collections;
+using Scenes.GameScene.Scripts.View.GameComponents;
+using UnityEngine;
 
-namespace Scenes.GameScene.Scripts.View
+namespace Scenes.GameScene.Scripts.View.Spawner
 {
     public class GasSpawner : RadiusSpawner
     {
@@ -12,10 +11,13 @@ namespace Scenes.GameScene.Scripts.View
         [SerializeField]
         private GameObject gas;
         [SerializeField]
+        private Shield shield;
+        [SerializeField]
         private SpriteRenderer earth;
 
         private void Start()
         {
+            
             Radius = earth.bounds.size.x / 2;
             SpawnProjectile();
         }
@@ -27,8 +29,11 @@ namespace Scenes.GameScene.Scripts.View
 
         private IEnumerator SpawnProjectile(GameObject gas)
         {
-            GameObject obj = Spawn(gas);
             yield return new WaitForSeconds(cooldown);
+            var gasObj = Spawn(gas);
+            var movement = gasObj.GetComponent<ProjectileMovement>();
+            movement.FaceTowards(gasObj.transform.position * 2);
+            movement.StartSelfDestroying(shield.Radius);
             SpawnProjectile();
         }
     }

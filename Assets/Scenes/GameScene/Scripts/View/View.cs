@@ -1,6 +1,7 @@
 ﻿using System;
 using Scenes.GameScene.Scripts.Animator;
 using Scenes.GameScene.Scripts.Model;
+using Scenes.GameScene.Scripts.View.UI;
 using UnityEngine;
 
 namespace Scenes.GameScene.Scripts.View

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Scenes.GameScene.Scripts.View
+namespace Scenes.GameScene.Scripts.View.Spawner
 {
     public class RadiusSpawner : MonoBehaviour
     {

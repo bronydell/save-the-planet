@@ -116,8 +116,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Rb: {fileID: 6455134187488447545}
-  speed: 20
-  target: {x: 0, y: 0, z: 0}
+  speed: 15
+  transparancyAnimationTime: 1
 --- !u!70 &2746747834705648163
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -131,6 +131,6 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.022131221, y: 0.0017999687}
-  m_Size: {x: 0.1640649, y: 0.17638376}
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.13, y: 0.13}
   m_Direction: 0

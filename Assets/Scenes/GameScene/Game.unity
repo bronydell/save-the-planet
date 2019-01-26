@@ -123,6 +123,8 @@ GameObject:
   - component: {fileID: 23126596}
   - component: {fileID: 23126595}
   - component: {fileID: 23126594}
+  - component: {fileID: 23126598}
+  - component: {fileID: 23126597}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -178,6 +180,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &23126597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23126593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ccaec3a3b257aa4c92a2f3c62a0b993, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputManager: {fileID: 23126598}
+--- !u!114 &23126598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23126593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d31b9a19ecbcc5e4793ba946bdc64517, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1111045523}
+  moveSpeed: 40
 --- !u!1 &149449179
 GameObject:
   m_ObjectHideFlags: 0
@@ -768,6 +797,54 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -74}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &641349184
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 641349185}
+  - component: {fileID: 641349186}
+  m_Layer: 0
+  m_Name: GasSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &641349185
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 641349184}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1586530534}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &641349186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 641349184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 987f3dbdbea8264469c0b3305aed3dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Radius: 5
+  cooldown: 1
+  gas: {fileID: 6455134187488447540, guid: 752c2b4c3c9fdc84a8258f4845441413, type: 3}
+  shield: {fileID: 1111045522}
+  earth: {fileID: 1586530533}
 --- !u!1 &724907345
 GameObject:
   m_ObjectHideFlags: 0
@@ -935,8 +1012,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57775509c851fb642bbe9024f3679030, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pieceOfShield: {fileID: 4461712563441518857, guid: 1711939022c5c5d419210057ae988a41,
+  pieceOfShield: {fileID: 1039529253795908185, guid: 1711939022c5c5d419210057ae988a41,
     type: 3}
+  Radius: 0
 --- !u!4 &1111045523
 Transform:
   m_ObjectHideFlags: 0
@@ -996,6 +1074,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Radius: 5
   cooldown: 1
+  faceTowardsTarget: {fileID: 1586530534}
   ray: {fileID: 2193656407421360375, guid: 5d335e602c2d4ef4c87cbed365501d84, type: 3}
 --- !u!1 &1586530532
 GameObject:
@@ -1076,6 +1155,7 @@ Transform:
   - {fileID: 1111045523}
   - {fileID: 1365549351}
   - {fileID: 220536925}
+  - {fileID: 641349185}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

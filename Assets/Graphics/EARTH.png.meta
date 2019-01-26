@@ -12,26 +12,26 @@ TextureImporter:
     21300014: EARTH_7
     21300016: EARTH_8
     21300018: EARTH_9
-    21300020: EARTH_Status_Health1_1
+    21300020: EARTH_Status_Health2_2
     21300022: EARTH_Status_Health4_1
     21300024: EARTH_Status_Health3_1
     21300026: EARTH_Status_Health2_1
-    21300028: EARTH_Status_Health2_3
+    21300028: EARTH_Status_Health3_3
     21300030: EARTH_Status_Health5_2
     21300032: EARTH_Status_Health4_2
-    21300034: EARTH_Status_Health3_2
-    21300036: EARTH_Status_Health2_2
-    21300038: EARTH_Status_Health1_Blink
+    21300034: EARTH_Status_Health4_2
+    21300036: EARTH_Status_Health3_2
+    21300038: EARTH_Status_Health2_Blink
     21300040: EARTH_Status_Health5_Blink
     21300042: EARTH_Status_Health4_Blink
     21300044: EARTH_Status_Health4_3
-    21300046: EARTH_Status_Health2_Blink
-    21300048: EARTH_Status_Health1_3
+    21300046: EARTH_Status_Health3_Blink
+    21300048: EARTH_Status_Health2_3
     21300050: EARTH_Status_Health5_Damage
     21300052: EARTH_Status_Health4_Damage
     21300054: EARTH_Status_Health5_3
-    21300056: EARTH_Status_Health2_Damage
-    21300058: EARTH_Status_Health1_Damage
+    21300056: EARTH_Status_Health3_Damage
+    21300058: EARTH_Status_Health2_Damage
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -205,7 +205,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EARTH_Status_Health1_1
+      name: EARTH_Status_Health2_2
       rect:
         serializedVersion: 2
         x: 1843
@@ -285,11 +285,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EARTH_Status_Health2_3
+      name: EARTH_Status_Health3_3
       rect:
         serializedVersion: 2
         x: 1248
-        y: 981
+        y: 978
         width: 355
         height: 265
       alignment: 0
@@ -329,27 +329,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 651
-        y: 631
-        width: 355
-        height: 265
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f424b67097f123e4f93bfba39ff17266
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: EARTH_Status_Health3_2
-      rect:
-        serializedVersion: 2
-        x: 651
-        y: 626
+        y: 629
         width: 355
         height: 265
       alignment: 0
@@ -365,11 +345,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EARTH_Status_Health2_2
+      name: EARTH_Status_Health3_2
       rect:
         serializedVersion: 2
         x: 1245
-        y: 623
+        y: 626
         width: 355
         height: 265
       alignment: 0
@@ -385,7 +365,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EARTH_Status_Health1_Blink
+      name: EARTH_Status_Health2_Blink
       rect:
         serializedVersion: 2
         x: 1903
@@ -465,7 +445,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EARTH_Status_Health2_Blink
+      name: EARTH_Status_Health3_Blink
       rect:
         serializedVersion: 2
         x: 1271
@@ -485,7 +465,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EARTH_Status_Health1_3
+      name: EARTH_Status_Health2_3
       rect:
         serializedVersion: 2
         x: 1881
@@ -565,11 +545,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EARTH_Status_Health2_Damage
+      name: EARTH_Status_Health3_Damage
       rect:
         serializedVersion: 2
         x: 1279
-        y: 21
+        y: 24
         width: 355
         height: 265
       alignment: 0
@@ -585,7 +565,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EARTH_Status_Health1_Damage
+      name: EARTH_Status_Health2_Damage
       rect:
         serializedVersion: 2
         x: 1902

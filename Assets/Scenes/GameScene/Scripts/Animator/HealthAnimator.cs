@@ -13,7 +13,7 @@ namespace Scenes.GameScene.Scripts.Animator
         private float timeTo = 5f;
 
         [SerializeField]
-        private int animationStates = 4;
+        private int animationStates = 3;
 
         // Start is called before the first frame update
         private void Start()

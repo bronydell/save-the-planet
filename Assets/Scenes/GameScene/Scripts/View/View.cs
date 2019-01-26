@@ -9,6 +9,8 @@ namespace Assets.Scenes.GameScene.Scripts.View
         // TODO: Remove it and implement actual thing
         [SerializeField]
         private DemoUi demoUi;
+        [SerializeField]
+        private GameObject shield;
 
         public Action TakeDamage
         {

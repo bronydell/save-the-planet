@@ -1,7 +1,7 @@
 ﻿using System;
-using Assets.Scenes.GameScene.Scripts.Model;
+using Scenes.GameScene.Scripts.Model;
 
-namespace Assets.Scenes.GameScene.Scripts.View
+namespace Scenes.GameScene.Scripts.View
 {
     public interface IGameView
     {

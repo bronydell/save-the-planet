@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Assets.Scenes.GameScene.Scripts.View
+namespace Scenes.GameScene.Scripts.View
 {
     public class DemoUi : MonoBehaviour
     {

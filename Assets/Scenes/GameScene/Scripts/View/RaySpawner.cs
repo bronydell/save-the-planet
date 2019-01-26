@@ -1,29 +1,30 @@
-﻿using UnityEngine;
-using System.Collections;
-using System.Runtime.InteropServices.WindowsRuntime;
-using UnityEngine.Networking;
+﻿using System.Collections;
+using UnityEngine;
 
-public class RaySpawner : RadiusSpawner
+namespace Scenes.GameScene.Scripts.View
 {
-    [SerializeField]
-    private float cooldown = 1;
-    [SerializeField]
-    private GameObject ray;
+    public class RaySpawner : RadiusSpawner
+    {
+        [SerializeField]
+        private float cooldown = 1;
+        [SerializeField]
+        private GameObject ray;
     
-    private void Start()
-    {
-        SpawnProjectile();
-    }
+        private void Start()
+        {
+            SpawnProjectile();
+        }
 
-    private void SpawnProjectile()
-    {
-        StartCoroutine(SpawnProjectile(ray));
-    }
+        private void SpawnProjectile()
+        {
+            StartCoroutine(SpawnProjectile(ray));
+        }
 
-    private IEnumerator SpawnProjectile(GameObject ray)
-    {
-        Spawn(ray);
-        yield return new WaitForSeconds(cooldown);
-        SpawnProjectile();
+        private IEnumerator SpawnProjectile(GameObject ray)
+        {
+            Spawn(ray);
+            yield return new WaitForSeconds(cooldown);
+            SpawnProjectile();
+        }
     }
 }

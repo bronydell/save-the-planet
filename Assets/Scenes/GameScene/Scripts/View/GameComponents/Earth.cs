@@ -2,6 +2,8 @@
 using Scenes.GameScene.Scripts.Animator;
 using Scenes.GameScene.Scripts.Model;
 using UnityEngine;
+using UnityEngine.Experimental.UIElements;
+using UnityEngine.UI;
 
 namespace Scenes.GameScene.Scripts.View.GameComponents
 {
@@ -16,6 +18,12 @@ namespace Scenes.GameScene.Scripts.View.GameComponents
         public void SetPlantState(PlanetState state)
         {
             smileStatus.SetHealth(state.Health);
+        }
+
+        [ContextMenu("Damage Self")]
+        public void DamageSelf()
+        {
+            takeDamage.Invoke();
         }
 
         private void OnTriggerEnter2D(Collider2D collision)

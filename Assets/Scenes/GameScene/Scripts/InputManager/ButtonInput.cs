@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets.Scenes.GameScene.Scripts.InputManager
+namespace Scenes.GameScene.Scripts.InputManager
 {
     public class ButtonInput : MonoBehaviour
     {

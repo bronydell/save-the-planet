@@ -1,8 +1,8 @@
 ﻿using System;
-using Assets.Scenes.GameScene.Scripts.Model;
+using Scenes.GameScene.Scripts.Model;
 using UnityEngine;
 
-namespace Assets.Scenes.GameScene.Scripts.View
+namespace Scenes.GameScene.Scripts.View
 {
     public class View : MonoBehaviour, IGameView
     {

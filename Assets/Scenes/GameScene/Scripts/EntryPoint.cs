@@ -1,8 +1,8 @@
-﻿using Assets.Scenes.GameScene.Scripts.Controller;
-using Assets.Scenes.GameScene.Scripts.Model;
+﻿using Scenes.GameScene.Scripts.Controller;
+using Scenes.GameScene.Scripts.Model;
 using UnityEngine;
 
-namespace Assets.Scenes.GameScene.Scripts
+namespace Scenes.GameScene.Scripts
 {
     public class EntryPoint : MonoBehaviour
     {

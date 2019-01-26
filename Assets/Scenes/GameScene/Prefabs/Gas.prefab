@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6455134187488447547}
   - component: {fileID: 6455134187488447545}
   - component: {fileID: 5493217140201256612}
-  - component: {fileID: 2746747834705648163}
+  - component: {fileID: 5531752855505292737}
   m_Layer: 0
   m_Name: Gas
   m_TagString: Gas
@@ -118,8 +118,8 @@ MonoBehaviour:
   Rb: {fileID: 6455134187488447545}
   speed: 15
   transparancyAnimationTime: 1
---- !u!70 &2746747834705648163
-CapsuleCollider2D:
+--- !u!58 &5531752855505292737
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -132,5 +132,5 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.13, y: 0.13}
-  m_Direction: 0
+  serializedVersion: 2
+  m_Radius: 0.080000006

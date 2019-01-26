@@ -1,11 +1,15 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Scenes.GameScene.Scripts.View.GameComponents
 {
     public class ProjectileMovement : MonoBehaviour
     {
-        [SerializeField]
-        protected Rigidbody2D Rb;
+        public Action OnSuccessDestroy { set; private get; }
+
+        [FormerlySerializedAs("Rb")] [SerializeField]
+        protected Rigidbody2D Rigidbody;
 
         [SerializeField]
         protected float speed;
@@ -17,7 +21,12 @@ namespace Scenes.GameScene.Scripts.View.GameComponents
 
         private void FixedUpdate()
         {
-            Rb.velocity = transform.up * speed * Time.fixedDeltaTime;
+            Rigidbody.velocity = transform.up * speed * Time.fixedDeltaTime;
+        }
+
+        public void IncreaseScore()
+        {
+            OnSuccessDestroy?.Invoke();
         }
 
         public virtual void DestroyMe(bool forced)

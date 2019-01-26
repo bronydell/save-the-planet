@@ -12,7 +12,7 @@ namespace Scenes.GameScene.Scripts
 
         public void Start()
         {
-            var controller = new GameController(earth, new PlanetState(5));
+            var controller = new GameController(earth, new PlanetState(4));
             controller.StartTheGame();
         }
     }

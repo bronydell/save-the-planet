@@ -1,17 +1,21 @@
 ﻿using UnityEngine;
 
-public class RadiusSpawner : MonoBehaviour
+namespace Scenes.GameScene.Scripts.View
 {
-    public float Radius = 5;
-
-    public void Spawn(GameObject prefab)
+    public class RadiusSpawner : MonoBehaviour
     {
-        var pos = RandomPointAtRadius() * Radius;
-        Instantiate(prefab, pos, Quaternion.identity);
-    }
+        [SerializeField]
+        protected float Radius = 5;
 
-    private Vector2 RandomPointAtRadius()
-    {
-        return Random.insideUnitCircle.normalized;
+        public GameObject Spawn(GameObject prefab)
+        {
+            var pos = RandomPointAtRadius() * Radius;
+            return Instantiate(prefab, pos, Quaternion.identity);
+        }
+
+        protected Vector2 RandomPointAtRadius()
+        {
+            return Random.insideUnitCircle.normalized;
+        }
     }
 }

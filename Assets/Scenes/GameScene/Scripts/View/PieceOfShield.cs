@@ -1,19 +1,26 @@
 ﻿using UnityEngine;
-using System.Collections;
 
-public class PieceOfShield : MonoBehaviour
+namespace Scenes.GameScene.Scripts.View
 {
-    private void OnTriggerEnter2D(Collider2D collision)
+    public class PieceOfShield : MonoBehaviour
     {
-        if (collision.gameObject.CompareTag("SunRay"))
+        private void OnTriggerEnter2D(Collider2D collision)
         {
-            OnDestroy();
-            Destroy(collision.gameObject);
+            if (collision.gameObject.CompareTag("SunRay"))
+            {
+                Destroy(collision.gameObject);
+            }
+            if (collision.gameObject.CompareTag("Gas"))
+            {
+                OnDestroy();
+                Destroy(collision.gameObject);
+                Destroy(gameObject);
+            }
         }
-    }
 
-    private void OnDestroy()
-    {
-        // TODO
+        private void OnDestroy()
+        {
+            // TODO
+        }
     }
 }

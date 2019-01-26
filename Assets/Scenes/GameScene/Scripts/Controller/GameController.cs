@@ -1,7 +1,7 @@
-﻿using Assets.Scenes.GameScene.Scripts.Model;
-using Assets.Scenes.GameScene.Scripts.View;
+﻿using Scenes.GameScene.Scripts.Model;
+using Scenes.GameScene.Scripts.View;
 
-namespace Assets.Scenes.GameScene.Scripts.Controller
+namespace Scenes.GameScene.Scripts.Controller
 {
     public class GameController
     {

@@ -1,25 +1,30 @@
 ﻿using UnityEngine;
 
-public class ProjectileMovement : MonoBehaviour
+namespace Scenes.GameScene.Scripts.View
 {
-    [SerializeField]
-    private Rigidbody2D Rb;
-
-    [SerializeField]
-    private float speed;
-
-    public void FaceTowards(Vector3 target)
+    public class ProjectileMovement : MonoBehaviour
     {
-        transform.up = target - transform.position;
-    }
+        [SerializeField]
+        protected Rigidbody2D Rb;
 
-    private void Start()
-    {
-        FaceTowards(Vector3.zero);
-    }
+        [SerializeField]
+        protected float speed;
 
-    private void FixedUpdate()
-    {
-        Rb.velocity = transform.up * speed * Time.fixedDeltaTime;
+        public Vector3 target = Vector3.zero;
+
+        public void FaceTowards(Vector3 target)
+        {
+            transform.up = target - transform.position;
+        }
+
+        private void Start()
+        {
+            FaceTowards(target);
+        }
+
+        private void FixedUpdate()
+        {
+            Rb.velocity = transform.up * speed * Time.fixedDeltaTime;
+        }
     }
 }

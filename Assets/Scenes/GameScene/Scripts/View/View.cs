@@ -1,14 +1,17 @@
 ﻿using System;
-using Assets.Scenes.GameScene.Scripts.Model;
+using Scenes.GameScene.Scripts.Animator;
+using Scenes.GameScene.Scripts.Model;
 using UnityEngine;
 
-namespace Assets.Scenes.GameScene.Scripts.View
+namespace Scenes.GameScene.Scripts.View
 {
     public class View : MonoBehaviour, IGameView
     {
         // TODO: Remove it and implement actual thing
         [SerializeField]
         private DemoUi demoUi;
+        [SerializeField]
+        private HealthAnimator smileStatus;
         [SerializeField]
         private GameObject shield;
 
@@ -19,7 +22,7 @@ namespace Assets.Scenes.GameScene.Scripts.View
 
         public void SetPlantState(PlanetState state)
         {
-            demoUi.SetHealth(state.Health);
+            smileStatus.SetHealth(state.Health);
         }
     }
 }

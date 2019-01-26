@@ -1,32 +1,30 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System.Collections;
+using UnityEngine;
 
-public class RaySpawner : MonoBehaviour
+namespace Scenes.GameScene.Scripts.View
 {
-    [SerializeField]
-    private float Cooldown = 1;
-    [SerializeField]
-    private float SpawnRadius;
-    [SerializeField]
-    private RadiusSpawner Spawner;
-    [SerializeField]
-    private GameObject Ray;
-
-    private float timer;
-    
-    void Start()
+    public class RaySpawner : RadiusSpawner
     {
-        timer = 0;
-    }
+        [SerializeField]
+        private float cooldown = 1;
+        [SerializeField]
+        private GameObject ray;
     
-    void Update()
-    {
-        timer += Time.deltaTime;
-        if (timer >= Cooldown)
+        private void Start()
         {
-            timer = 0;
-            Spawner.Radius = SpawnRadius;
-            Spawner.Spawn(Ray);
+            SpawnProjectile();
+        }
+
+        private void SpawnProjectile()
+        {
+            StartCoroutine(SpawnProjectile(ray));
+        }
+
+        private IEnumerator SpawnProjectile(GameObject ray)
+        {
+            Spawn(ray);
+            yield return new WaitForSeconds(cooldown);
+            SpawnProjectile();
         }
     }
 }

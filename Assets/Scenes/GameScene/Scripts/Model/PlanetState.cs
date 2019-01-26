@@ -1,4 +1,4 @@
-﻿namespace Assets.Scenes.GameScene.Scripts.Model
+﻿namespace Scenes.GameScene.Scripts.Model
 {
     public class PlanetState
     {

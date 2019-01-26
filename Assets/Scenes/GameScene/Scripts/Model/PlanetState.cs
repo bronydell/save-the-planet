@@ -1,18 +1,17 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class PlanetState : MonoBehaviour
+﻿namespace Assets.Scenes.GameScene.Scripts.Model
 {
-    // Start is called before the first frame update
-    void Start()
+    public class PlanetState
     {
-        
-    }
+        public int Health { get; }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public PlanetState(int health)
+        {
+            Health = health;
+        }
+
+        public PlanetState SetHealth(int health)
+        {
+            return new PlanetState(health);
+        }
     }
 }

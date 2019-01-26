@@ -208,8 +208,8 @@ TextureImporter:
       name: EARTH_Status_Health1_1
       rect:
         serializedVersion: 2
-        x: 1545
-        y: 1002
+        x: 1542
+        y: 969
         width: 355
         height: 265
       alignment: 0

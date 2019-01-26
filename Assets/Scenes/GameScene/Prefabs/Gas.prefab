@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1039529253795908185
+--- !u!1 &6455134187488447540
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,38 +8,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 481541710289278226}
-  - component: {fileID: 4461712563441518857}
-  - component: {fileID: 2109965136570688707}
-  - component: {fileID: 7297780838872756766}
+  - component: {fileID: 6455134187488447546}
+  - component: {fileID: 6455134187488447547}
+  - component: {fileID: 6455134187488447545}
+  - component: {fileID: 5493217140201256612}
+  - component: {fileID: 2746747834705648163}
   m_Layer: 0
-  m_Name: PieceOfShield
-  m_TagString: Untagged
+  m_Name: Gas
+  m_TagString: Gas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &481541710289278226
+--- !u!4 &6455134187488447546
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1039529253795908185}
+  m_GameObject: {fileID: 6455134187488447540}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.009445, y: -1.9826076, z: 0}
-  m_LocalScale: {x: 1, y: 1.5, z: 1}
+  m_LocalPosition: {x: 1.608, y: 0.019, z: -0.015316197}
+  m_LocalScale: {x: 3.15, y: 2.93, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &4461712563441518857
+--- !u!212 &6455134187488447547
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1039529253795908185}
+  m_GameObject: {fileID: 6455134187488447540}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -70,42 +71,66 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 023fd728e24767a4abc7b516ec4facce, type: 3}
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.4, y: 2}
+  m_Size: {x: 0.16, y: 0.16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!70 &2109965136570688707
-CapsuleCollider2D:
+--- !u!50 &6455134187488447545
+Rigidbody2D:
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1039529253795908185}
-  m_Enabled: 1
-  m_Density: 1
+  m_GameObject: {fileID: 6455134187488447540}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.0074607823, y: 1.9288093}
-  m_Size: {x: 0.52228075, y: 0.14238192}
-  m_Direction: 1
---- !u!114 &7297780838872756766
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &5493217140201256612
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1039529253795908185}
+  m_GameObject: {fileID: 6455134187488447540}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74fa9438ce958e742b2af86ad441c2bd, type: 3}
+  m_Script: {fileID: 11500000, guid: ae414e1e2efdfab4cbc4247cd558a00c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Rb: {fileID: 6455134187488447545}
+  speed: 15
+  transparancyAnimationTime: 1
+--- !u!70 &2746747834705648163
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6455134187488447540}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.13, y: 0.13}
+  m_Direction: 0

@@ -999,7 +999,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pieceOfShield: {fileID: 1039529253795908185, guid: 1711939022c5c5d419210057ae988a41,
     type: 3}
-  Radius: 0
+  Radius: 3
 --- !u!4 &1111045523
 Transform:
   m_ObjectHideFlags: 0

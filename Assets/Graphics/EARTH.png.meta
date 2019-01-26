@@ -6,10 +6,10 @@ TextureImporter:
     21300002: EARTH_1
     21300004: SunRay
     21300006: EARTH_3
-    21300008: EARTH_4
+    21300008: SunRay1
     21300010: EARTH_Status_Health5_1
-    21300012: EARTH_6
-    21300014: EARTH_7
+    21300012: SunRay3
+    21300014: SunRay4
     21300016: EARTH_8
     21300018: EARTH_9
     21300020: EARTH_Status_Health2_2
@@ -32,6 +32,8 @@ TextureImporter:
     21300054: EARTH_Status_Health5_3
     21300056: EARTH_Status_Health3_Damage
     21300058: EARTH_Status_Health2_Damage
+    21300060: EARTH_2
+    21300062: SunRay2
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -129,10 +131,10 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1588
-        width: 424
-        height: 412
-      alignment: 0
+        y: 1585
+        width: 430
+        height: 415
+      alignment: 9
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -149,9 +151,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 424
-        y: 1588
-        width: 440
-        height: 412
+        y: 1584
+        width: 430
+        height: 415
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -580,6 +582,126 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 1377b745dc793964cb4b4d5c8bacc599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EARTH_2
+      rect:
+        serializedVersion: 2
+        x: 1247
+        y: 1575
+        width: 430
+        height: 415
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acf3c2d8cfa689c4bbba4343cd9f3f6d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EARTH_3
+      rect:
+        serializedVersion: 2
+        x: 1768
+        y: 1566
+        width: 430
+        height: 415
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad08ade395d0fc3408f11bd77ccfadea
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SunRay1
+      rect:
+        serializedVersion: 2
+        x: 2264
+        y: 1639
+        width: 510
+        height: 200
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29c678dcb7a5c074fa7ad21edff5ab6e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SunRay2
+      rect:
+        serializedVersion: 2
+        x: 2293
+        y: 1424
+        width: 510
+        height: 200
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0825551ddb3cfbe48a77b12c2b3ed134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SunRay3
+      rect:
+        serializedVersion: 2
+        x: 2299
+        y: 1212
+        width: 510
+        height: 200
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcd07a4632210924ca7c59215b4cff47
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SunRay4
+      rect:
+        serializedVersion: 2
+        x: 2299
+        y: 970
+        width: 510
+        height: 200
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a027cb4bb03c0943bbb6e1b241d62bd
       vertices: []
       indices: 
       edges: []

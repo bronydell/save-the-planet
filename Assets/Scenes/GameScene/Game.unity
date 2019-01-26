@@ -1073,6 +1073,8 @@ GameObject:
   - component: {fileID: 1586530533}
   - component: {fileID: 1586530536}
   - component: {fileID: 1586530535}
+  - component: {fileID: 1586530538}
+  - component: {fileID: 1586530537}
   m_Layer: 0
   m_Name: EARTH1_1
   m_TagString: Untagged
@@ -1175,3 +1177,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   smileStatus: {fileID: 220536928}
+  earthStatus: {fileID: 1586530537}
+--- !u!114 &1586530537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1586530532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d66a48bb0b47aa4b944f5e7129367ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeFrom: 1000
+  timeTo: 1000
+  animationStates: 3
+--- !u!95 &1586530538
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1586530532}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 26ea77d8afa20b749a86734bdf0a858f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

@@ -12,11 +12,14 @@ namespace Scenes.GameScene.Scripts.View.GameComponents
         private Action takeDamage;
         [SerializeField]
         private HealthAnimator smileStatus;
+        [SerializeField]
+        private HealthAnimator earthStatus;
 
         public Action TakeDamage { set => takeDamage = value; }
 
         public void SetPlantState(PlanetState state)
         {
+            earthStatus.SetHealth(state.Health);
             smileStatus.SetHealth(state.Health);
         }
 

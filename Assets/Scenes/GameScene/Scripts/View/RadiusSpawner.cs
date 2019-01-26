@@ -2,7 +2,8 @@
 
 public class RadiusSpawner : MonoBehaviour
 {
-    public float Radius = 5;
+    [SerializeField]
+    protected float Radius = 5;
 
     public void Spawn(GameObject prefab)
     {

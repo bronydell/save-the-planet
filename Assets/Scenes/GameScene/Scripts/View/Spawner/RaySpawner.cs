@@ -1,39 +1,30 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using Scenes.GameScene.Scripts.View.GameComponents;
 using UnityEngine;
 
 namespace Scenes.GameScene.Scripts.View.Spawner
 {
-    public class RaySpawner : RadiusSpawner
+    public class RaySpawner : Spawner
     {
-        [HideInInspector]
-        public Action onRayDestroy;
-
-        [SerializeField]
-        private float cooldown = 1;
         [SerializeField]
         private Transform faceTowardsTarget;
-        [SerializeField]
-        private GameObject ray;
-    
-        private void Start()
-        {
-            SpawnProjectile();
-        }
+        public GasSpawner gasSpawner;
 
-        private void SpawnProjectile()
+        protected override void SpawnLogic()
         {
-            StartCoroutine(SpawnProjectile(ray));
-        }
-
-        private IEnumerator SpawnProjectile(GameObject ray)
-        {
-            yield return new WaitForSeconds(cooldown);
-            var movement = Spawn(ray).GetComponent<ProjectileMovement>();
-            movement.OnSuccessDestroy = onRayDestroy;
+            var movement = Spawn(spawnObjectPrefab, GetObsticles(), -1);
+            var movementTransform = movement.transform;
+            SpawnedObjects.Add(movementTransform);
+            movement.OnSuccessDestroy = onGainPoints;
+            movement.onDestoroy = () => { SpawnedObjects.Remove(movementTransform); };
             movement.FaceTowards(faceTowardsTarget.position);
-            SpawnProjectile();
         }
-    }
+
+        protected override List<Transform> GetObsticles()
+        {
+            return gasSpawner.SpawnedObjects;
+        }
+    } 
 }

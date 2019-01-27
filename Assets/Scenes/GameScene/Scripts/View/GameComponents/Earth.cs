@@ -26,8 +26,8 @@ namespace Scenes.GameScene.Scripts.View.GameComponents
         private HealthAnimator earthStatus;
 
         public Action TakeDamage { set => takeDamage = value; }
-        public Action DestroyedRay { set => raySpawner.onRayDestroy = value; }
-        public Action DestroyedGas { set => gasSpawner.onGasSelfDestroy = value; }
+        public Action DestroyedRay { set => raySpawner.onGainPoints = value; }
+        public Action DestroyedGas { set => gasSpawner.onGainPoints = value; }
 
         public void SetPlantState(PlanetState state)
         {

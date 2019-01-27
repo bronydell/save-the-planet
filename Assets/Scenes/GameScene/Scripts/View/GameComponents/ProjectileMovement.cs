@@ -6,6 +6,8 @@ namespace Scenes.GameScene.Scripts.View.GameComponents
 {
     public class ProjectileMovement : MonoBehaviour
     {
+        public Action onDestoroy { set; private get; }
+
         public Action OnSuccessDestroy { set; private get; }
 
         [FormerlySerializedAs("Rb")] [SerializeField]
@@ -31,6 +33,7 @@ namespace Scenes.GameScene.Scripts.View.GameComponents
 
         public virtual void DestroyMe(bool forced)
         {
+            onDestoroy?.Invoke();
             Destroy(gameObject);
         }
 

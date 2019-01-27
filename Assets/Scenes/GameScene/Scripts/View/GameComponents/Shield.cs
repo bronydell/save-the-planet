@@ -16,16 +16,12 @@ namespace Scenes.GameScene.Scripts.View.GameComponents
         {
             pieceOfShieldRenderer = pieceOfShield.GetComponent<SpriteRenderer>();
         }
-   
+
         public void GenerateShield()
         {
-            /*var height = pieceOfShieldRenderer.sprite.rect.height * pieceOfShield.transform.localScale.y;
-            var width = pieceOfShieldRenderer.sprite.rect.width * pieceOfShield.transform.localScale.x;
-            var radius = Mathf.Sqrt(height * height + width * width);
-            var angle = Mathf.Acos((2 * radius * radius - width * width) / (2 * radius * radius));*/
-            var width = pieceOfShieldRenderer.bounds.size.x;// * pieceOfShield.transform.localScale.x;
+            var width = pieceOfShieldRenderer.bounds.size.x;
             var r = Radius + pieceOfShieldRenderer.bounds.size.y;
-            var angle = /*2 * Mathf.PI / 360;*/ Mathf.Acos((2 * r * r - width * width) / (2 * r * r));
+            var angle = Mathf.Acos((2 * r * r - width * width) / (2 * r * r));
             pieceOfShieldRenderer.transform.position = new Vector2(0, Radius);
 
             PieceOfShield prev = null, first = null, last = null;
@@ -44,8 +40,6 @@ namespace Scenes.GameScene.Scripts.View.GameComponents
             }
             first.prev = last;
             last.next = prev;
-
-            //Radius = radius;
         }
     }
 }

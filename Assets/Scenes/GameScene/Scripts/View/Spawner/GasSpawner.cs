@@ -1,44 +1,39 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using Scenes.GameScene.Scripts.View.GameComponents;
 using UnityEngine;
 
 namespace Scenes.GameScene.Scripts.View.Spawner
 {
-    public class GasSpawner : RadiusSpawner
+    public class GasSpawner : Spawner
     {
-        [HideInInspector]
-        public Action onGasSelfDestroy;
-
-        [SerializeField]
-        private float cooldown = 1;
-        [SerializeField]
-        private GameObject gas;
         [SerializeField]
         private Shield shield;
         [SerializeField]
         private SpriteRenderer earth;
+        [SerializeField]
+        private RaySpawner raySpawner;
+        
 
-        private void Start()
+        protected override void Start()
         {
             Radius = earth.bounds.size.x / 2;
-            SpawnProjectile();
+            base.Start();
         }
 
-        private void SpawnProjectile()
+        protected override void SpawnLogic()
         {
-            StartCoroutine(SpawnProjectile(gas));
-        }
-
-        private IEnumerator SpawnProjectile(GameObject gas)
-        {
-            yield return new WaitForSeconds(cooldown);
-            var gasObj = Spawn(gas);
-            var movement = gasObj.GetComponent<ProjectileMovement>();
-            movement.OnSuccessDestroy = onGasSelfDestroy;
-            movement.FaceTowards(gasObj.transform.position * 2);
+            var movement = Spawn(SpawnObjectPrefab, GetObsticles());
+            movement.OnSuccessDestroy = OnGainPoints;
+            movement.FaceTowards(movement.transform.position * 2);
+            movement.Speed = ProjectileSpeed;
             movement.StartSelfDestroying(shield.Radius);
-            SpawnProjectile();
+        }
+
+        protected override List<Transform> GetObsticles()
+        {
+            return raySpawner.SpawnedObjects;
         }
     }
 }

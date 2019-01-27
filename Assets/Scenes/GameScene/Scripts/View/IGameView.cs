@@ -10,6 +10,10 @@ namespace Scenes.GameScene.Scripts.View
         Action DestroyedGas { set; }
 
         void SetPlantState(PlanetState state);
-        void InitShield();
+        void InitShield(float shieldRegenerationTime);
+        void StartSpawning();
+        void StopSpawning();
+        void StartTheGame(Action onFinishAnimation);
+        void FinishTheGame(Action onFinishAnimation);
     }
 }

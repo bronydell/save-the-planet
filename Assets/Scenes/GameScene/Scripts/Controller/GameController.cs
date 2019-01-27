@@ -24,13 +24,26 @@ namespace Scenes.GameScene.Scripts.Controller
             InitView();
         }
 
+        public void FinishTheGame()
+        {
+            view.StopSpawning();
+            view.FinishTheGame(() =>
+            {
+
+            });
+        }
+
         private void InitView()
         {
             view.TakeDamage = TakeDamage;
             view.DestroyedGas = ProtectedFromGas;
             view.DestroyedRay = ProtectedFromRay;
-            view.InitShield();
-            UpdateView();
+            view.InitShield(state.ShieldRegenerationTime);
+            view.StartTheGame(() =>
+            {
+                view.StartSpawning();
+                UpdateView();
+            });
         }
 
         private void UpdateView()
@@ -46,6 +59,7 @@ namespace Scenes.GameScene.Scripts.Controller
             currentState = currentState.SetGasSpeed(progression.GasSpeed);
             currentState = currentState.SetRaySpawnCooldown(progression.RaySpawnCooldown);
             currentState = currentState.SetRaySpeed(progression.RaySpeed);
+            currentState = currentState.SetShieldRegenerationTime(progressionManager.ShieldRegenrationTime);
 
             return currentState;
         }
@@ -53,17 +67,26 @@ namespace Scenes.GameScene.Scripts.Controller
         private void TakeDamage()
         {
             state = state.SetHealth(state.Health - 1);
+            if (state.Health == 0)
+            {
+                FinishTheGame();
+            } else if (state.Health < 0)
+            {
+                return;
+            }
             UpdateView();
         }
 
         private void ProtectedFromRay()
         {
-            UpdateScore(progressionManager.ScorePerRay);
+            if (!state.IsDead)
+                UpdateScore(progressionManager.ScorePerRay);
         }
 
         private void ProtectedFromGas()
         {
-            UpdateScore(progressionManager.ScorePerGas);
+            if (!state.IsDead)
+                UpdateScore(progressionManager.ScorePerGas);
         }
 
         private void UpdateScore(int price)

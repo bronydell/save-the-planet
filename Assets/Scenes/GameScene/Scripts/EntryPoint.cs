@@ -12,21 +12,29 @@ namespace Scenes.GameScene.Scripts
         [SerializeField]
         private ProgressionManager progressionManager;
 
+        private GameController gameController;
+
         private PlanetState GetDefaultState()
         {
             var progression = progressionManager.GetProgression(0);
             return new PlanetState(4,
                 progression.GasSpeed, progression.RaySpeed,
                 progression.GasSpawnCooldown, progression.RaySpawnCooldown,
-                0
+                0, progressionManager.ShieldRegenrationTime
             );
         }
 
-        public void Start()
+        public void StartGame()
         {
             var startState = GetDefaultState();
-            var controller = new GameController(earth, progressionManager, startState);
-            controller.StartTheGame();
+            gameController = new GameController(earth, progressionManager, startState);
+            gameController.StartTheGame();
+        }
+
+        public void FinishGame()
+        {
+            var startState = GetDefaultState();
+            gameController.FinishTheGame();
         }
     }
 }

@@ -10,6 +10,13 @@ namespace Scenes.GameScene.Scripts.View.GameComponents
     {
         private Action takeDamage;
 
+        [Header("Camera controller")]
+        [SerializeField]
+        private CameraController cameraController;
+
+        [SerializeField] 
+        private FinishScreen finishScreen;
+
         [SerializeField]
         private Shield shield;
 
@@ -26,19 +33,52 @@ namespace Scenes.GameScene.Scripts.View.GameComponents
         private HealthAnimator earthStatus;
 
         public Action TakeDamage { set => takeDamage = value; }
-        public Action DestroyedRay { set => raySpawner.onRayDestroy = value; }
-        public Action DestroyedGas { set => gasSpawner.onGasSelfDestroy = value; }
+        public Action DestroyedRay { set => raySpawner.OnGainPoints = value; }
+        public Action DestroyedGas { set => gasSpawner.OnGainPoints = value; }
 
         public void SetPlantState(PlanetState state)
         {
             earthStatus.SetHealth(state.Health);
             smileStatus.SetHealth(state.Health);
+            finishScreen.SetScore(state.Score);
+
+            raySpawner.Cooldown = state.RaySpawnCooldown;
+            raySpawner.ProjectileSpeed = state.RaySpeed;
+            gasSpawner.Cooldown = state.GasSpawnCooldown;
+            gasSpawner.ProjectileSpeed = state.GasSpeed;
+
             Debug.Log($"Score is {state.Score}");
         }
 
-        public void InitShield()
+        public void InitShield(float shieldRegerationTime)
         {
-            shield.GenerateShield();
+            shield.GenerateShield(shieldRegerationTime);
+        }
+
+        public void StartSpawning()
+        {
+            gasSpawner.StartSpawning();
+            raySpawner.StartSpawning();
+        }
+
+        public void StopSpawning()
+        {
+            gasSpawner.StopSpawning();
+            raySpawner.StopSpawning();
+        }
+
+        public void StartTheGame(Action onFinishAnimation)
+        {
+            cameraController.StartTheGameAnimation(onFinishAnimation);
+        }
+
+        public void FinishTheGame(Action onFinishAnimation)
+        {
+            cameraController.FinishTheGameAnimation(() =>
+            {
+                onFinishAnimation.Invoke();
+                finishScreen.ShowDeathAnimation();
+            });
         }
 
         [ContextMenu("Damage Self")]

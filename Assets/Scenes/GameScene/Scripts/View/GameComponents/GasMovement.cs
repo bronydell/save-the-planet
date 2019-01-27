@@ -18,7 +18,7 @@ namespace Scenes.GameScene.Scripts.View.GameComponents
 
         public override void StartSelfDestroying(float distance)
         {
-            StartCoroutine(DestroyMeAfterTime(distance / speed * 25));
+            StartCoroutine(DestroyMeAfterTime(distance / Speed * 25));
         }
 
         public override void DestroyMe(bool forced)

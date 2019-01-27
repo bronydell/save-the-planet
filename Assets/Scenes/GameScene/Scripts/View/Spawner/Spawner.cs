@@ -16,7 +16,7 @@ namespace Scenes.GameScene.Scripts.View.Spawner
         [ReadOnly]
         public float Cooldown = 1;
         [SerializeField]
-        protected GameObject spawnObjectPrefab;
+        protected GameObject SpawnObjectPrefab;
 
         /** List of all spawner rays */
         public List<Transform> SpawnedObjects;
@@ -33,7 +33,7 @@ namespace Scenes.GameScene.Scripts.View.Spawner
 
         private void SpawnProjectile()
         {
-            StartCoroutine(SpawnProjectile(spawnObjectPrefab));
+            StartCoroutine(SpawnProjectile(SpawnObjectPrefab));
         }
 
         private IEnumerator SpawnProjectile(GameObject ray)

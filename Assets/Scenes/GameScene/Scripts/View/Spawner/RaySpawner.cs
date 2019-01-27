@@ -11,7 +11,7 @@ namespace Scenes.GameScene.Scripts.View.Spawner
 
         protected override void SpawnLogic()
         {
-            var movement = Spawn(spawnObjectPrefab, GetObsticles(), -1);
+            var movement = Spawn(SpawnObjectPrefab, GetObsticles(), -1);
             var movementTransform = movement.transform;
             SpawnedObjects.Add(movementTransform);
             movement.OnSuccessDestroy = OnGainPoints;

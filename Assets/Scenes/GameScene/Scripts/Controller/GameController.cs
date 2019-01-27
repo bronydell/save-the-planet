@@ -26,6 +26,10 @@ namespace Scenes.GameScene.Scripts.Controller
 
         public void FinishTheGame()
         {
+            view.FinishTheGame(() =>
+            {
+
+            });
         }
 
         private void InitView()

@@ -875,6 +875,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   earth: {fileID: 1586530536}
+  progressionManager: {fileID: 11400000, guid: 896c72b2294108f43821833b3dba1b5d, type: 2}
 --- !u!4 &724907348
 Transform:
   m_ObjectHideFlags: 0
@@ -1176,6 +1177,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c3fe855e14d84e4f800ea8575f5852c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shield: {fileID: 1111045522}
+  gasSpawner: {fileID: 641349186}
+  raySpawner: {fileID: 1365549352}
   smileStatus: {fileID: 220536928}
   earthStatus: {fileID: 1586530537}
 --- !u!114 &1586530537

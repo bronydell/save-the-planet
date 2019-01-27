@@ -207,7 +207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1111045523}
-  moveSpeed: 40
+  moveSpeed: 100
 --- !u!114 &23126599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -657,7 +657,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Radius: 5
-  cooldown: 1
+  ProjectileSpeed: 0
+  Cooldown: 1
   spawnObjectPrefab: {fileID: 6455134187488447540, guid: 752c2b4c3c9fdc84a8258f4845441413,
     type: 3}
   SpawnedObjects: []
@@ -799,7 +800,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Radius: 5
-  cooldown: 1
+  ProjectileSpeed: 0
+  Cooldown: 1
   spawnObjectPrefab: {fileID: 2193656407421360375, guid: 5d335e602c2d4ef4c87cbed365501d84,
     type: 3}
   SpawnedObjects: []
@@ -883,7 +885,7 @@ Transform:
   m_GameObject: {fileID: 1586530532}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.794, y: 0.794, z: 0.794}
+  m_LocalScale: {x: 0.6090703, y: 0.6090703, z: 0.6090703}
   m_Children:
   - {fileID: 1111045523}
   - {fileID: 1365549351}

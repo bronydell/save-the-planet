@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 
 namespace Scenes.GameScene.Scripts.View.GameComponents
@@ -12,6 +13,17 @@ namespace Scenes.GameScene.Scripts.View.GameComponents
 
         [SerializeField]
         private int destroyRadius = 1;
+
+        public float regenTimer = 5;
+
+        private CapsuleCollider2D collider;
+        private SpriteRenderer renderer;
+
+        private void Start()
+        {
+            collider = GetComponent<CapsuleCollider2D>();
+            renderer = GetComponent<SpriteRenderer>();
+        }
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
@@ -37,7 +49,8 @@ namespace Scenes.GameScene.Scripts.View.GameComponents
 
         private void DestroyMe(int radius)
         {
-            Destroy(gameObject);
+            StartCoroutine(Regen());
+
             int index = transform.GetSiblingIndex();
             if (prev != null && radius > 0)
             {
@@ -49,7 +62,19 @@ namespace Scenes.GameScene.Scripts.View.GameComponents
                 int nextIndex = (index + 1 + transform.parent.childCount) % transform.parent.childCount;
                 transform.parent.GetChild(nextIndex).GetComponent<PieceOfShield>().DestroyMe(radius - 1);
             }
-            
+        }
+
+        private IEnumerator Regen()
+        {
+            SetDisabled(true);
+            yield return new WaitForSeconds(regenTimer);
+            SetDisabled(false);
+        }
+
+        private void SetDisabled(bool disabled)
+        {
+            renderer.enabled = !disabled;
+            collider.enabled = !disabled;
         }
     }
 }

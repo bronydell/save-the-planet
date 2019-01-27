@@ -11,5 +11,8 @@ namespace Scenes.GameScene.Scripts.View
 
         void SetPlantState(PlanetState state);
         void InitShield();
+        void StartSpawning();
+        void StartTheGame(Action onFinishAnimation);
+        void FinishTheGame(Action onFinishAnimation);
     }
 }

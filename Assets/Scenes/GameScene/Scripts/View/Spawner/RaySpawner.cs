@@ -7,7 +7,7 @@ namespace Scenes.GameScene.Scripts.View.Spawner
     {
         [SerializeField]
         private Transform faceTowardsTarget;
-        public GasSpawner gasSpawner;
+        public GasSpawner GasSpawner;
 
         protected override void SpawnLogic()
         {
@@ -22,7 +22,7 @@ namespace Scenes.GameScene.Scripts.View.Spawner
 
         protected override List<Transform> GetObsticles()
         {
-            return gasSpawner.SpawnedObjects;
+            return GasSpawner.SpawnedObjects;
         }
     } 
 }

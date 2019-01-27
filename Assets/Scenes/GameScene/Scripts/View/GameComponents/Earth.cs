@@ -14,6 +14,9 @@ namespace Scenes.GameScene.Scripts.View.GameComponents
         [SerializeField]
         private CameraController cameraController;
 
+        [SerializeField] 
+        private FinishScreen finishScreen;
+
         [SerializeField]
         private Shield shield;
 
@@ -37,6 +40,7 @@ namespace Scenes.GameScene.Scripts.View.GameComponents
         {
             earthStatus.SetHealth(state.Health);
             smileStatus.SetHealth(state.Health);
+            finishScreen.SetScore(state.Score);
 
             raySpawner.Cooldown = state.RaySpawnCooldown;
             raySpawner.ProjectileSpeed = state.RaySpeed;
@@ -57,6 +61,12 @@ namespace Scenes.GameScene.Scripts.View.GameComponents
             raySpawner.StartSpawning();
         }
 
+        public void StopSpawning()
+        {
+            gasSpawner.StopSpawning();
+            raySpawner.StopSpawning();
+        }
+
         public void StartTheGame(Action onFinishAnimation)
         {
             cameraController.StartTheGameAnimation(onFinishAnimation);
@@ -64,7 +74,11 @@ namespace Scenes.GameScene.Scripts.View.GameComponents
 
         public void FinishTheGame(Action onFinishAnimation)
         {
-            cameraController.FinishTheGameAnimation(onFinishAnimation);
+            cameraController.FinishTheGameAnimation(() =>
+            {
+                onFinishAnimation.Invoke();
+                finishScreen.ShowDeathAnimation();
+            });
         }
 
         [ContextMenu("Damage Self")]

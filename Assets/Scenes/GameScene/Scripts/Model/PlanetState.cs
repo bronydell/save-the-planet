@@ -2,6 +2,7 @@
 {
     public class PlanetState
     {
+        public bool IsDead => Health <= 0;
         public int Score { get; }
         public int Health { get; }
         public float GasSpeed { get; }

@@ -26,6 +26,7 @@ namespace Scenes.GameScene.Scripts.Controller
 
         public void FinishTheGame()
         {
+            view.StopSpawning();
             view.FinishTheGame(() =>
             {
 
@@ -78,12 +79,14 @@ namespace Scenes.GameScene.Scripts.Controller
 
         private void ProtectedFromRay()
         {
-            UpdateScore(progressionManager.ScorePerRay);
+            if (!state.IsDead)
+                UpdateScore(progressionManager.ScorePerRay);
         }
 
         private void ProtectedFromGas()
         {
-            UpdateScore(progressionManager.ScorePerGas);
+            if (!state.IsDead)
+                UpdateScore(progressionManager.ScorePerGas);
         }
 
         private void UpdateScore(int price)

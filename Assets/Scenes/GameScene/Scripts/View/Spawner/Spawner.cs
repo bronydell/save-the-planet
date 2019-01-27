@@ -24,6 +24,10 @@ namespace Scenes.GameScene.Scripts.View.Spawner
         protected virtual void Start()
         {
             SpawnedObjects = new List<Transform>();
+        }
+
+        public void StartSpawning()
+        {
             SpawnProjectile();
         }
 

@@ -10,6 +10,10 @@ namespace Scenes.GameScene.Scripts.View.GameComponents
     {
         private Action takeDamage;
 
+        [Header("Camera controller")]
+        [SerializeField]
+        private CameraController cameraController;
+
         [SerializeField]
         private Shield shield;
 
@@ -45,6 +49,22 @@ namespace Scenes.GameScene.Scripts.View.GameComponents
         public void InitShield()
         {
             shield.GenerateShield();
+        }
+
+        public void StartSpawning()
+        {
+            gasSpawner.StartSpawning();
+            raySpawner.StartSpawning();
+        }
+
+        public void StartTheGame(Action onFinishAnimation)
+        {
+            cameraController.StartTheGameAnimation(onFinishAnimation);
+        }
+
+        public void FinishTheGame(Action onFinishAnimation)
+        {
+            cameraController.FinishTheGameAnimation(onFinishAnimation);
         }
 
         [ContextMenu("Damage Self")]

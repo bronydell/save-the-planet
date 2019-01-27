@@ -24,13 +24,21 @@ namespace Scenes.GameScene.Scripts.Controller
             InitView();
         }
 
+        public void FinishTheGame()
+        {
+        }
+
         private void InitView()
         {
             view.TakeDamage = TakeDamage;
             view.DestroyedGas = ProtectedFromGas;
             view.DestroyedRay = ProtectedFromRay;
             view.InitShield();
-            UpdateView();
+            view.StartTheGame(() =>
+            {
+                view.StartSpawning();
+                UpdateView();
+            });
         }
 
         private void UpdateView()

@@ -14,6 +14,9 @@ namespace Scenes.GameScene.Scripts.View.GameComponents
         [SerializeField]
         private CameraController cameraController;
 
+        [SerializeField] 
+        private FinishScreen finishScreen;
+
         [SerializeField]
         private Shield shield;
 
@@ -70,7 +73,11 @@ namespace Scenes.GameScene.Scripts.View.GameComponents
 
         public void FinishTheGame(Action onFinishAnimation)
         {
-            cameraController.FinishTheGameAnimation(onFinishAnimation);
+            cameraController.FinishTheGameAnimation(() =>
+            {
+                onFinishAnimation.Invoke();
+                finishScreen.ShowDeathAnimation();
+            });
         }
 
         [ContextMenu("Damage Self")]

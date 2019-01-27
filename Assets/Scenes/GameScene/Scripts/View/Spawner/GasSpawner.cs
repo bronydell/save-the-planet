@@ -25,9 +25,10 @@ namespace Scenes.GameScene.Scripts.View.Spawner
         protected override void SpawnLogic()
         {
             var movement = Spawn(spawnObjectPrefab, GetObsticles());
-            movement.OnSuccessDestroy = onGainPoints;
+            movement.OnSuccessDestroy = OnGainPoints;
             movement.FaceTowards(movement.transform.position * 2);
             movement.StartSelfDestroying(shield.Radius);
+            movement.Speed = ProjectileSpeed;
         }
 
         protected override List<Transform> GetObsticles()

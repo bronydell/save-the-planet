@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using Scenes.GameScene.Scripts.View.GameComponents;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 namespace Scenes.GameScene.Scripts.View.Spawner
@@ -17,9 +14,10 @@ namespace Scenes.GameScene.Scripts.View.Spawner
             var movement = Spawn(spawnObjectPrefab, GetObsticles(), -1);
             var movementTransform = movement.transform;
             SpawnedObjects.Add(movementTransform);
-            movement.OnSuccessDestroy = onGainPoints;
+            movement.OnSuccessDestroy = OnGainPoints;
             movement.onDestoroy = () => { SpawnedObjects.Remove(movementTransform); };
             movement.FaceTowards(faceTowardsTarget.position);
+            movement.Speed = ProjectileSpeed;
         }
 
         protected override List<Transform> GetObsticles()

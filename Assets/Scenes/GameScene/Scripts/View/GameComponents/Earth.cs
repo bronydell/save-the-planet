@@ -57,6 +57,12 @@ namespace Scenes.GameScene.Scripts.View.GameComponents
             raySpawner.StartSpawning();
         }
 
+        public void StopSpawning()
+        {
+            gasSpawner.StopSpawning();
+            raySpawner.StopSpawning();
+        }
+
         public void StartTheGame(Action onFinishAnimation)
         {
             cameraController.StartTheGameAnimation(onFinishAnimation);

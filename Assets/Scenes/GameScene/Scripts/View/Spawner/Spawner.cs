@@ -31,6 +31,11 @@ namespace Scenes.GameScene.Scripts.View.Spawner
             SpawnProjectile();
         }
 
+        public void StopSpawning()
+        {
+            StopAllCoroutines();
+        }
+
         private void SpawnProjectile()
         {
             StartCoroutine(SpawnProjectile(SpawnObjectPrefab));

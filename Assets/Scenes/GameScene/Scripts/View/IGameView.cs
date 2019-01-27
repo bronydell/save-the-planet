@@ -13,6 +13,7 @@ namespace Scenes.GameScene.Scripts.View
         void InitShield(float shieldRegenerationTime);
         void StartSpawning();
         void StopSpawning();
+        void SetHighScore(int score);
         void StartTheGame(Action onFinishAnimation);
         void FinishTheGame(Action onFinishAnimation);
     }

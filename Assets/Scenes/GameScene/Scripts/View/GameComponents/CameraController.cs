@@ -1,7 +1,6 @@
 ﻿using System;
 using DG.Tweening;
 using UnityEngine;
-using Vector2 = System.Numerics.Vector2;
 
 namespace Scenes.GameScene.Scripts.View.GameComponents
 {

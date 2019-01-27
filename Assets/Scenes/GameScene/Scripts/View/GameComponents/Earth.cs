@@ -40,6 +40,7 @@ namespace Scenes.GameScene.Scripts.View.GameComponents
         {
             earthStatus.SetHealth(state.Health);
             smileStatus.SetHealth(state.Health);
+            finishScreen.SetScore(state.Score);
 
             raySpawner.Cooldown = state.RaySpawnCooldown;
             raySpawner.ProjectileSpeed = state.RaySpeed;

@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class FinishScreen : MonoBehaviour
 {
+    [SerializeField]
+    private TextMeshProUGUI scoreText;
     [SerializeField]
     private Animator deathAnimator;
 
@@ -17,5 +20,10 @@ public class FinishScreen : MonoBehaviour
     public void ShowDeathAnimation()
     {
         deathAnimator.SetBool("ShouldShow", true);
+    }
+
+    public void SetScore(int score)
+    {
+        scoreText.SetText($"Score: {score}");
     }
 }

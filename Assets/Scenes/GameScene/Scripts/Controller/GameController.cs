@@ -26,6 +26,7 @@ namespace Scenes.GameScene.Scripts.Controller
 
         public void FinishTheGame()
         {
+            view.StopSpawning();
             view.FinishTheGame(() =>
             {
 

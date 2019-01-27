@@ -676,7 +676,8 @@ MonoBehaviour:
   Radius: 5
   ProjectileSpeed: 0
   Cooldown: 1
-  SpawnObjectPrefab: {fileID: 0}
+  SpawnObjectPrefab: {fileID: 6455134187488447540, guid: 752c2b4c3c9fdc84a8258f4845441413,
+    type: 3}
   SpawnedObjects: []
   shield: {fileID: 1111045522}
   earth: {fileID: 1586530533}
@@ -1130,7 +1131,8 @@ MonoBehaviour:
   Radius: 8
   ProjectileSpeed: 0
   Cooldown: 1
-  SpawnObjectPrefab: {fileID: 0}
+  SpawnObjectPrefab: {fileID: 2193656407421360375, guid: 5d335e602c2d4ef4c87cbed365501d84,
+    type: 3}
   SpawnedObjects: []
   faceTowardsTarget: {fileID: 1586530534}
   GasSpawner: {fileID: 641349186}
@@ -1182,7 +1184,7 @@ Animator:
   m_GameObject: {fileID: 1547548947}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 072866cef437c9b4e95b18448abbefe0, type: 2}
+  m_Controller: {fileID: 9100000, guid: 5c8408dc815c8eb42817084f85b67c8f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

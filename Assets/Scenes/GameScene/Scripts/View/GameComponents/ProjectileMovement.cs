@@ -1,4 +1,5 @@
 ﻿using System;
+using Jam.CustomAttrs;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -6,13 +7,15 @@ namespace Scenes.GameScene.Scripts.View.GameComponents
 {
     public class ProjectileMovement : MonoBehaviour
     {
+        public Action onDestoroy { set; private get; }
+
         public Action OnSuccessDestroy { set; private get; }
 
         [FormerlySerializedAs("Rb")] [SerializeField]
         protected Rigidbody2D Rigidbody;
 
-        [SerializeField]
-        protected float speed;
+        [ReadOnly]
+        public float Speed;
 
         public void FaceTowards(Vector3 target)
         {
@@ -21,7 +24,7 @@ namespace Scenes.GameScene.Scripts.View.GameComponents
 
         private void FixedUpdate()
         {
-            Rigidbody.velocity = transform.up * speed * Time.fixedDeltaTime;
+            Rigidbody.velocity = transform.up * Speed * Time.fixedDeltaTime;
         }
 
         public void IncreaseScore()
@@ -31,6 +34,7 @@ namespace Scenes.GameScene.Scripts.View.GameComponents
 
         public virtual void DestroyMe(bool forced)
         {
+            onDestoroy?.Invoke();
             Destroy(gameObject);
         }
 

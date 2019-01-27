@@ -26,13 +26,19 @@ namespace Scenes.GameScene.Scripts.View.GameComponents
         private HealthAnimator earthStatus;
 
         public Action TakeDamage { set => takeDamage = value; }
-        public Action DestroyedRay { set => raySpawner.onRayDestroy = value; }
-        public Action DestroyedGas { set => gasSpawner.onGasSelfDestroy = value; }
+        public Action DestroyedRay { set => raySpawner.OnGainPoints = value; }
+        public Action DestroyedGas { set => gasSpawner.OnGainPoints = value; }
 
         public void SetPlantState(PlanetState state)
         {
             earthStatus.SetHealth(state.Health);
             smileStatus.SetHealth(state.Health);
+
+            raySpawner.Cooldown = state.RaySpawnCooldown;
+            raySpawner.ProjectileSpeed = state.RaySpeed;
+            gasSpawner.Cooldown = state.GasSpawnCooldown;
+            gasSpawner.ProjectileSpeed = state.GasSpeed;
+
             Debug.Log($"Score is {state.Score}");
         }
 

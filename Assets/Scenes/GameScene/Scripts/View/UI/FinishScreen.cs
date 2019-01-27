@@ -9,6 +9,8 @@ public class FinishScreen : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI scoreText;
     [SerializeField]
+    private TextMeshProUGUI highScoreText;
+    [SerializeField]
     private Animator deathAnimator;
 
     public void RestartScene()
@@ -25,5 +27,10 @@ public class FinishScreen : MonoBehaviour
     public void SetScore(int score)
     {
         scoreText.SetText($"Score: {score}");
+    }
+
+    public void SetHighScore(int score)
+    {
+        highScoreText.SetText($"High Score: {score}");
     }
 }

@@ -2,6 +2,7 @@
 using Scenes.GameScene.Scripts.Animator;
 using Scenes.GameScene.Scripts.Model;
 using Scenes.GameScene.Scripts.View.Spawner;
+using Scenes.GameScene.Scripts.View.UI;
 using UnityEngine;
 
 namespace Scenes.GameScene.Scripts.View.GameComponents
@@ -14,9 +15,13 @@ namespace Scenes.GameScene.Scripts.View.GameComponents
         [SerializeField]
         private CameraController cameraController;
 
+        [Header("UI Screens")]
+        [SerializeField] 
+        private StartMenu startScreen;
         [SerializeField] 
         private FinishScreen finishScreen;
 
+        [Header("Shield")]
         [SerializeField]
         private Shield shield;
 
@@ -46,8 +51,6 @@ namespace Scenes.GameScene.Scripts.View.GameComponents
             raySpawner.ProjectileSpeed = state.RaySpeed;
             gasSpawner.Cooldown = state.GasSpawnCooldown;
             gasSpawner.ProjectileSpeed = state.GasSpeed;
-
-            Debug.Log($"Score is {state.Score}");
         }
 
         public void InitShield(float shieldRegerationTime)
@@ -65,6 +68,12 @@ namespace Scenes.GameScene.Scripts.View.GameComponents
         {
             gasSpawner.StopSpawning();
             raySpawner.StopSpawning();
+        }
+
+        public void SetHighScore(int score)
+        {
+            startScreen.SetHighScore(score);
+            finishScreen.SetHighScore(score);
         }
 
         public void StartTheGame(Action onFinishAnimation)

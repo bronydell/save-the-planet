@@ -13,6 +13,13 @@ namespace Scenes.GameScene.Scripts
         private ProgressionManager progressionManager;
 
         private GameController gameController;
+        private ISaveScore scoreSaver;
+
+        private void Start()
+        {
+            scoreSaver = new PlayerPrefsScoreSaver();
+            earth.SetHighScore(scoreSaver.ReadHighScore());
+        }
 
         private PlanetState GetDefaultState()
         {
@@ -27,13 +34,12 @@ namespace Scenes.GameScene.Scripts
         public void StartGame()
         {
             var startState = GetDefaultState();
-            gameController = new GameController(earth, progressionManager, startState);
+            gameController = new GameController(earth, progressionManager, scoreSaver, startState);
             gameController.StartTheGame();
         }
 
         public void FinishGame()
         {
-            var startState = GetDefaultState();
             gameController.FinishTheGame();
         }
     }

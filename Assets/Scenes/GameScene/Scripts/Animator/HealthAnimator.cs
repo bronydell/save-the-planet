@@ -16,7 +16,7 @@ namespace Scenes.GameScene.Scripts.Animator
         private int animationStates = 3;
 
         // Start is called before the first frame update
-        private void Start()
+        private void Awake()
         {
             statusAnimator = GetComponent<UnityEngine.Animator>();
             StartRandomizeValue();

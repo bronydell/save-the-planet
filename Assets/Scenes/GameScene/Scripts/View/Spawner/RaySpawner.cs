@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using Scenes.GameScene.Scripts.View.GameComponents;
 using UnityEngine;
 
@@ -6,6 +7,9 @@ namespace Scenes.GameScene.Scripts.View.Spawner
 {
     public class RaySpawner : RadiusSpawner
     {
+        [HideInInspector]
+        public Action onRayDestroy;
+
         [SerializeField]
         private float cooldown = 1;
         [SerializeField]
@@ -27,6 +31,7 @@ namespace Scenes.GameScene.Scripts.View.Spawner
         {
             yield return new WaitForSeconds(cooldown);
             var movement = Spawn(ray).GetComponent<ProjectileMovement>();
+            movement.OnSuccessDestroy = onRayDestroy;
             movement.FaceTowards(faceTowardsTarget.position);
             SpawnProjectile();
         }

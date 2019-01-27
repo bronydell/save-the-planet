@@ -9,10 +9,23 @@ namespace Scenes.GameScene.Scripts
     {
         [SerializeField]
         private Earth earth;
+        [SerializeField]
+        private ProgressionManager progressionManager;
+
+        private PlanetState GetDefaultState()
+        {
+            var progression = progressionManager.GetProgression(0);
+            return new PlanetState(4,
+                progression.GasSpeed, progression.RaySpeed,
+                progression.GasSpawnCooldown, progression.RaySpawnCooldown,
+                0
+            );
+        }
 
         public void Start()
         {
-            var controller = new GameController(earth, new PlanetState(5));
+            var startState = GetDefaultState();
+            var controller = new GameController(earth, progressionManager, startState);
             controller.StartTheGame();
         }
     }

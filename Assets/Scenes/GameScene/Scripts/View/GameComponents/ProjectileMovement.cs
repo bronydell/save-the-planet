@@ -1,5 +1,4 @@
 ﻿using System;
-using Jam.CustomAttrs;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -14,8 +13,7 @@ namespace Scenes.GameScene.Scripts.View.GameComponents
 
         [FormerlySerializedAs("Rb")] [SerializeField]
         protected Rigidbody2D Rigidbody;
-
-        [ReadOnly]
+        
         public float Speed;
 
         public void FaceTowards(Vector3 target)

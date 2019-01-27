@@ -2,7 +2,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Jam.CustomAttrs;
 using UnityEngine;
 
 namespace Scenes.GameScene.Scripts.View.Spawner
@@ -11,9 +10,7 @@ namespace Scenes.GameScene.Scripts.View.Spawner
     {
         [HideInInspector]
         public Action OnGainPoints;
-        [ReadOnly]
         public float ProjectileSpeed;
-        [ReadOnly]
         public float Cooldown = 1;
         [SerializeField]
         protected GameObject SpawnObjectPrefab;

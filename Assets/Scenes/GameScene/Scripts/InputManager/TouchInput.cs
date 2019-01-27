@@ -21,7 +21,7 @@ namespace Scenes.GameScene.Scripts.InputManager
             if (Input.touchCount > 0)
             {
                 var touch = Input.GetTouch(0);
-                if (touch.position.x < screenWidth / 2)
+                if (touch.position.x > screenWidth / 2)
                     inputManager.MoveLeft();
                 else
                     inputManager.MoveRight();

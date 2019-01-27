@@ -20,7 +20,7 @@ namespace Scenes.GameScene.Scripts
             return new PlanetState(4,
                 progression.GasSpeed, progression.RaySpeed,
                 progression.GasSpawnCooldown, progression.RaySpawnCooldown,
-                0
+                0, progressionManager.ShieldRegenrationTime
             );
         }
 

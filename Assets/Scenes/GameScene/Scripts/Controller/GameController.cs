@@ -37,7 +37,7 @@ namespace Scenes.GameScene.Scripts.Controller
             view.TakeDamage = TakeDamage;
             view.DestroyedGas = ProtectedFromGas;
             view.DestroyedRay = ProtectedFromRay;
-            view.InitShield();
+            view.InitShield(state.ShieldRegenerationTime);
             view.StartTheGame(() =>
             {
                 view.StartSpawning();
@@ -58,6 +58,7 @@ namespace Scenes.GameScene.Scripts.Controller
             currentState = currentState.SetGasSpeed(progression.GasSpeed);
             currentState = currentState.SetRaySpawnCooldown(progression.RaySpawnCooldown);
             currentState = currentState.SetRaySpeed(progression.RaySpeed);
+            currentState = currentState.SetShieldRegenerationTime(progressionManager.ShieldRegenrationTime);
 
             return currentState;
         }
@@ -65,6 +66,13 @@ namespace Scenes.GameScene.Scripts.Controller
         private void TakeDamage()
         {
             state = state.SetHealth(state.Health - 1);
+            if (state.Health == 0)
+            {
+                FinishTheGame();
+            } else if (state.Health < 0)
+            {
+                return;
+            }
             UpdateView();
         }
 

@@ -4,6 +4,7 @@
     {
         int ScorePerGas { get; }
         int ScorePerRay { get; }
+        float ShieldRegenrationTime { get; }
         Progression GetProgression(int currentScore);
     }
 }

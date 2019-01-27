@@ -7,6 +7,7 @@ namespace Scenes.GameScene.Scripts.View.GameComponents
 {
     public class ProjectileMovement : MonoBehaviour
     {
+        private bool hasAccounted = false;
         public Action onDestoroy { set; private get; }
 
         public Action OnSuccessDestroy { set; private get; }
@@ -29,6 +30,8 @@ namespace Scenes.GameScene.Scripts.View.GameComponents
 
         public void IncreaseScore()
         {
+            if (hasAccounted) return;
+            hasAccounted = true;
             OnSuccessDestroy?.Invoke();
         }
 

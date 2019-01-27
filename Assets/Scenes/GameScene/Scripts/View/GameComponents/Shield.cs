@@ -9,7 +9,7 @@ namespace Scenes.GameScene.Scripts.View.GameComponents
         private GameObject pieceOfShield;
 
         private SpriteRenderer pieceOfShieldRenderer;
-
+        
         public float Radius = 5;
 
         private void Awake()
@@ -17,7 +17,7 @@ namespace Scenes.GameScene.Scripts.View.GameComponents
             pieceOfShieldRenderer = pieceOfShield.GetComponent<SpriteRenderer>();
         }
 
-        public void GenerateShield()
+        public void GenerateShield(float shieldRegenrationTime)
         {
             var width = pieceOfShieldRenderer.bounds.size.x;
             var r = Radius + pieceOfShieldRenderer.bounds.size.y;
@@ -28,13 +28,15 @@ namespace Scenes.GameScene.Scripts.View.GameComponents
             for (var i = 0; i < 2 * Mathf.PI / angle; i++)
             {
                 var piece = Instantiate(pieceOfShield, transform).transform;
-                piece.GetComponent<PieceOfShield>().prev = prev;
+                var shieldPiece = piece.GetComponent<PieceOfShield>();
+                shieldPiece.RegenTimer = shieldRegenrationTime;
+                shieldPiece.prev = prev;
                 if (prev != null)
-                    prev.next = piece.GetComponent<PieceOfShield>();
-                prev = piece.GetComponent<PieceOfShield>();
+                    prev.next = shieldPiece;
+                prev = shieldPiece;
                 if (first == null)
-                    first = piece.GetComponent<PieceOfShield>();
-                last = piece.GetComponent<PieceOfShield>();
+                    first = shieldPiece;
+                last = shieldPiece;
                 piece.position = new Vector2(0, Radius);
                 piece.RotateAround(transform.position, new Vector3(0, 0, 1), Mathf.Rad2Deg * i * angle);
             }

@@ -111,4 +111,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prev: {fileID: 0}
   next: {fileID: 0}
-  destroyRadius: 3
+  destroyRadius: 8

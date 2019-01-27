@@ -13,11 +13,19 @@ MonoBehaviour:
   m_Name: Balance
   m_EditorClassIdentifier: 
   progressionDictionary:
-    m_keys: 00000000
+    m_keys: 00000000e8030000d0070000
     m_values:
-    - GasSpeed: 0
-      RaySpeed: 0
-      GasSpawnCooldown: 0
-      RaySpawnCooldown: 0
-  scorePerGas: 100
+    - GasSpeed: 20
+      RaySpeed: 100
+      GasSpawnCooldown: 8
+      RaySpawnCooldown: 3
+    - GasSpeed: 50
+      RaySpeed: 100
+      GasSpawnCooldown: 5
+      RaySpawnCooldown: 2
+    - GasSpeed: 50
+      RaySpeed: 150
+      GasSpawnCooldown: 4
+      RaySpawnCooldown: 1.5
+  scorePerGas: 200
   scorePerRay: 100

@@ -12,9 +12,12 @@ namespace Scenes.GameScene.Scripts.Model
         private int scorePerGas = 100;
         [SerializeField]
         private int scorePerRay = 100;
+        [SerializeField]
+        private float shieldRegenrationTime = 5f;
 
         public int ScorePerGas => scorePerGas;
         public int ScorePerRay => scorePerRay;
+        public float ShieldRegenrationTime => shieldRegenrationTime;
 
         public Progression GetProgression(int currentScore)
         {

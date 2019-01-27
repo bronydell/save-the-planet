@@ -24,11 +24,11 @@ namespace Scenes.GameScene.Scripts.View.Spawner
 
         protected override void SpawnLogic()
         {
-            var movement = Spawn(spawnObjectPrefab, GetObsticles());
+            var movement = Spawn(SpawnObjectPrefab, GetObsticles());
             movement.OnSuccessDestroy = OnGainPoints;
             movement.FaceTowards(movement.transform.position * 2);
-            movement.StartSelfDestroying(shield.Radius);
             movement.Speed = ProjectileSpeed;
+            movement.StartSelfDestroying(shield.Radius);
         }
 
         protected override List<Transform> GetObsticles()

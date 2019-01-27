@@ -41,3 +41,4 @@ MonoBehaviour:
       RaySpawnCooldown: 0.8
   scorePerGas: 200
   scorePerRay: 100
+  shieldRegenrationTime: 1

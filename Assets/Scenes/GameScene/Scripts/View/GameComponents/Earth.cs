@@ -46,9 +46,9 @@ namespace Scenes.GameScene.Scripts.View.GameComponents
             Debug.Log($"Score is {state.Score}");
         }
 
-        public void InitShield()
+        public void InitShield(float shieldRegerationTime)
         {
-            shield.GenerateShield();
+            shield.GenerateShield(shieldRegerationTime);
         }
 
         public void StartSpawning()

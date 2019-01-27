@@ -14,7 +14,7 @@ namespace Scenes.GameScene.Scripts.View.GameComponents
         [SerializeField]
         private int destroyRadius = 1;
 
-        public float regenTimer = 5;
+        public float RegenTimer = 5;
 
         private CapsuleCollider2D collider;
         private SpriteRenderer renderer;
@@ -67,7 +67,7 @@ namespace Scenes.GameScene.Scripts.View.GameComponents
         private IEnumerator Regen()
         {
             SetDisabled(true);
-            yield return new WaitForSeconds(regenTimer);
+            yield return new WaitForSeconds(RegenTimer);
             SetDisabled(false);
         }
 

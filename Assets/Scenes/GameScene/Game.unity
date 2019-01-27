@@ -799,7 +799,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e2e63590eae9f849a12fc21ba2dd8dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Radius: 5
+  Radius: 8
   ProjectileSpeed: 0
   Cooldown: 1
   spawnObjectPrefab: {fileID: 2193656407421360375, guid: 5d335e602c2d4ef4c87cbed365501d84,

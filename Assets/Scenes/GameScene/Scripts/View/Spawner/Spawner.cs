@@ -15,14 +15,6 @@ namespace Scenes.GameScene.Scripts.View.Spawner
         [SerializeField]
         protected GameObject SpawnObjectPrefab;
 
-        /** List of all spawner rays */
-        public List<Transform> SpawnedObjects;
-
-        protected virtual void Start()
-        {
-            SpawnedObjects = new List<Transform>();
-        }
-
         public void StartSpawning()
         {
             SpawnProjectile();
@@ -48,11 +40,6 @@ namespace Scenes.GameScene.Scripts.View.Spawner
         protected virtual void SpawnLogic()
         {
             // Nothing lol
-        }
-
-        protected virtual List<Transform> GetObsticles()
-        {
-            return new List<Transform>();
         }
     }
 }

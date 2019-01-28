@@ -40,9 +40,9 @@ namespace Scenes.GameScene.Scripts.View.GameComponents
             }
             if (collision.gameObject.CompareTag("Gas"))
             {
-                DestroyMe(destroyRadius);
                 if (movement != null)
                     movement.DestroyMe(true);
+                DestroyMe(destroyRadius);
                 
             }
         }
@@ -51,16 +51,13 @@ namespace Scenes.GameScene.Scripts.View.GameComponents
         {
             StartCoroutine(Regen());
 
-            int index = transform.GetSiblingIndex();
             if (prev != null && radius > 0)
             {
-                int prevIndex = (index - 1 + transform.parent.childCount) % transform.parent.childCount;
-                transform.parent.GetChild(prevIndex).GetComponent<PieceOfShield>().DestroyMe(radius - 1);
+                prev.DestroyMe(radius - 1);
             }
             if (next != null && radius > 0)
             {
-                int nextIndex = (index + 1 + transform.parent.childCount) % transform.parent.childCount;
-                transform.parent.GetChild(nextIndex).GetComponent<PieceOfShield>().DestroyMe(radius - 1);
+                next.DestroyMe(radius - 1);
             }
         }
 

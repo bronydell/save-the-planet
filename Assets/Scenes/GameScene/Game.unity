@@ -870,6 +870,50 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &512690218
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 512690219}
+  - component: {fileID: 512690220}
+  m_Layer: 0
+  m_Name: WheelSpawnerHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &512690219
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 512690218}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1586530534}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &512690220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 512690218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91b31bee5b01bc84dba6ca5b8d8f0573, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parts: 16
 --- !u!1 &628162627
 GameObject:
   m_ObjectHideFlags: 0
@@ -996,14 +1040,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Radius: 5
+  wheelSpawner: {fileID: 512690220}
   ProjectileSpeed: 0
   Cooldown: 1
   SpawnObjectPrefab: {fileID: 6455134187488447540, guid: 752c2b4c3c9fdc84a8258f4845441413,
     type: 3}
-  SpawnedObjects: []
   shield: {fileID: 1111045522}
   earth: {fileID: 1586530533}
-  raySpawner: {fileID: 1365549352}
 --- !u!1 &724907345
 GameObject:
   m_ObjectHideFlags: 0
@@ -1386,7 +1429,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.323, y: 0.49}
+  m_AnchoredPosition: {x: -0.323, y: 0.38004}
   m_SizeDelta: {x: 10.088, y: 5.403}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1208923779
@@ -1480,7 +1523,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.41, y: -2.74}
+  m_AnchoredPosition: {x: 0.41, y: -3.2882}
   m_SizeDelta: {x: -15.883901, y: -7.6225224}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1210406132
@@ -1617,13 +1660,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Radius: 8
+  wheelSpawner: {fileID: 512690220}
   ProjectileSpeed: 0
   Cooldown: 1
   SpawnObjectPrefab: {fileID: 2193656407421360375, guid: 5d335e602c2d4ef4c87cbed365501d84,
     type: 3}
-  SpawnedObjects: []
   faceTowardsTarget: {fileID: 1586530534}
-  GasSpawner: {fileID: 641349186}
 --- !u!1 &1547548947
 GameObject:
   m_ObjectHideFlags: 0
@@ -1930,6 +1972,7 @@ Transform:
   - {fileID: 1365549351}
   - {fileID: 220536925}
   - {fileID: 641349185}
+  - {fileID: 512690219}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2131,7 +2174,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.323, y: 0.49}
+  m_AnchoredPosition: {x: -0.323, y: 0.22}
   m_SizeDelta: {x: 10.088, y: 5.403}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1932943104

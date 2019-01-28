@@ -12,28 +12,21 @@ namespace Scenes.GameScene.Scripts.View.Spawner
         private Shield shield;
         [SerializeField]
         private SpriteRenderer earth;
-        [SerializeField]
-        private RaySpawner raySpawner;
-        
 
-        protected override void Start()
+        protected void Start()
         {
             Radius = earth.bounds.size.x / 2;
-            base.Start();
         }
 
         protected override void SpawnLogic()
         {
-            var movement = Spawn(SpawnObjectPrefab, GetObsticles());
+            var movement = Spawn(SpawnObjectPrefab);
+            if (movement == null)
+                return;
             movement.OnSuccessDestroy = OnGainPoints;
             movement.FaceTowards(movement.transform.position * 2);
             movement.Speed = ProjectileSpeed;
             movement.StartSelfDestroying(shield.Radius);
-        }
-
-        protected override List<Transform> GetObsticles()
-        {
-            return raySpawner.SpawnedObjects;
         }
     }
 }
